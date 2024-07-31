@@ -1,0 +1,22 @@
+#include "openglscene.h"
+
+OpenGLScene::OpenGLScene( GLint width, GLint height) : QGLWidget(QGLFormat(QGL::SampleBuffers)) {
+    initializeGL();
+    resizeGL(width, height);
+
+    widthViewport = width;
+    heighViewport = height;
+}
+
+void OpenGLScene::resizeGL(GLint nWidth, GLint nHeight) {
+    glViewport(0, 0, static_cast<GLint>(nWidth), static_cast<GLint>(nHeight));
+    glLoadIdentity();
+    glMatrixMode(GL_MODELVIEW);
+    widthViewport = nWidth;
+    heighViewport = nHeight;
+    updateGL ();
+}
+
+void OpenGLScene::paintGL(){
+    
+}

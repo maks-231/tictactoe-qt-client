@@ -1,0 +1,19 @@
+#ifndef OPENGLSCENE_H
+#define OPENGLSCENE_H
+
+#include <QGLWidget>
+#include <QtOpenGL>
+
+class TicTacToeScene : public QWidget {
+public:
+    TicTacToeScene(GLint, GLint);
+
+private:
+    void resizeGL(GLint, GLint);
+    void paintGL();
+     
+    GLint widthViewport;
+    GLint heighViewport;
+};
+
+#endif // OPENGLSCENE_H
